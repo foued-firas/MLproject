@@ -1,0 +1,37 @@
+name: CI - Flask Docker App
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Get your code
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # 2. Setup Python (optional but good practice)
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.10"
+
+      # 3. Install dependencies (test if app installs correctly)
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+
+      # 4. Build Docker image
+      - name: Build Docker image
+        run: |
+          docker build -t ml-project-app .
+
+      # 5. Run container (optional test)
+      - name: Run container test
+        run: |
+          docker run -d -p 5000:5000 ml-project-app
+          sleep 5
