@@ -1,3 +1,172 @@
-<h1>Welcome to the home page </h1>
-<p>This is the home page of our Flask application.</p>
-<p>Use the navigation links to explore other pages.</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Prediction - Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            height: 100vh;
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            width: 900px;
+            height: 500px;
+            display: flex;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            background: white;
+        }
+
+        /* LEFT SIDE */
+        .left {
+            flex: 1;
+            background: linear-gradient(135deg, #2a5298, #1e3c72);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .left h1 {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+
+        .left p {
+            font-size: 16px;
+            opacity: 0.9;
+        }
+
+        /* RIGHT SIDE */
+        .right {
+            flex: 1;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .right h2 {
+            margin-bottom: 25px;
+            color: #333;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+        }
+
+        .input-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 14px;
+            color: #555;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            outline: none;
+            transition: 0.3s;
+        }
+
+        .input-group input:focus {
+            border-color: #2a5298;
+            box-shadow: 0 0 5px rgba(42,82,152,0.5);
+        }
+
+        .btn {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            background: #2a5298;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #1e3c72;
+        }
+
+        .extra {
+            margin-top: 15px;
+            font-size: 13px;
+            text-align: center;
+        }
+
+        .extra a {
+            color: #2a5298;
+            text-decoration: none;
+        }
+
+        .extra a:hover {
+            text-decoration: underline;
+        }
+
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- LEFT SIDE -->
+    <div class="left">
+        <h1>Student Prediction</h1>
+        <p>
+            Predict student performance using AI.<br>
+            Login to access your dashboard and results.
+        </p>
+    </div>
+
+    <!-- RIGHT SIDE -->
+    <div class="right">
+        <h2>Login</h2>
+
+        <form action="/login" method="POST">
+            
+            <div class="input-group">
+                <label>Email</label>
+                <input type="email" name="email" placeholder="Enter your email" required>
+            </div>
+
+            <div class="input-group">
+                <label>Password</label>
+                <input type="password" name="password" placeholder="Enter your password" required>
+            </div>
+
+            <button class="btn" type="submit">Login</button>
+
+        </form>
+
+        <div class="extra">
+            <p>Don't have an account? <a href="/register">Sign up</a></p>
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>
